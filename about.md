@@ -31,9 +31,18 @@ Issue について
 
 [すごい広島](http://great-h.github.io/rule.html)では以下のフォーマットが推奨されています。暫くこれを使わせて頂く方向で。
 
-    ### [名前][URL]
+```
+---
+layout: post
+title:  "タイトル"
+date:   2018-01-17 13:17:52 +0900
+categories: android-architecture-reading
+---
+
+### [名前](URL)
     
-    * [やること宣言][Issue へのリンク]
+* [やること宣言](Issue へのリンク)
+```
 
 ファイル作成や Pull Request などについて
 -------------------
