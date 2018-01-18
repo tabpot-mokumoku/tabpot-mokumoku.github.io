@@ -1,25 +1,25 @@
 ## README
 
-´ğËÜÅª¤Ê¤¹¤¹¤áÊı¤Ë¤Ä¤¤¤Æ°Ê²¼¤ËÎóµó¤·¤Ş¤¹¡£
+åŸºæœ¬çš„ãªã™ã™ã‚æ–¹ã«ã¤ã„ã¦ä»¥ä¸‹ã«åˆ—æŒ™ã—ã¾ã™ã€‚
 
-- [¥ê¥İ¥¸¥È¥ê](https://github.com/tabpot-mokumoku/tabpot-mokumoku.github.com/)¤Î Issue ¤Ç¤â¤¯¤â¤¯¤Ê¥Í¥¿¤òÀë¸À¤·¤Ş¤¹
-- ºîÀ®¤·¤¿ Issue ¤Î ID ¤È¼«Ê¬¤Î ID ¤ò¤â¤È¤Ë branch ¤òºî¤ê¤Ş¤¹ (Îã¡§yamanetoshi-1)
-- /_posts/yyyy-mm-dd-<¼«Ê¬¤Îid>.md ¤òºîÀ®¤·¤Æ¡¢¤È¤ê¤¢¤¨¤º¡Ö¼«Ê¬¤ÎÌ¾Á°¡×¤ª¤è¤Ó¡ÖºîÀ®¤·¤¿ Issue ¤Ø¤Î¥ê¥ó¥¯¡×¤òºîÀ®¤·¤Ş¤¹
-- ¥Õ¥©¡¼¥Ş¥Ã¥È¤Ë¤Ä¤¤¤Æ¤ÏÎã¤ò°Ê²¼¤Ë¼¨¤·¤Ş¤¹
-- Pull Request ¤òºî¤ê¤Ş¤¹
-- ¤â¤¯¤â¤¯¤·¤¿¤ê»²²Ã¼Ô¤È¾ğÊó¸ò´¹¤·¤¿¤ê¤·¤Æ¤¯¤À¤µ¤¤
-- ¤â¤·¤«¤¹¤ë¤È¼«¸Ê¾Ò²ğ¥¿¥¤¥à¤òÀß¤±¤ë¤«¤â¤·¤ì¤Ş¤»¤ó
+- [ãƒªãƒã‚¸ãƒˆãƒª](https://github.com/tabpot-mokumoku/tabpot-mokumoku.github.com/)ã® Issue ã§ã‚‚ãã‚‚ããªãƒã‚¿ã‚’å®£è¨€ã—ã¾ã™
+- ä½œæˆã—ãŸ Issue ã® ID ã¨è‡ªåˆ†ã® ID ã‚’ã‚‚ã¨ã« branch ã‚’ä½œã‚Šã¾ã™ (ä¾‹ï¼šyamanetoshi-1)
+- /_posts/yyyy-mm-dd-<è‡ªåˆ†ã®id>.md ã‚’ä½œæˆã—ã¦ã€ã¨ã‚Šã‚ãˆãšã€Œè‡ªåˆ†ã®åå‰ã€ãŠã‚ˆã³ã€Œä½œæˆã—ãŸ Issue ã¸ã®ãƒªãƒ³ã‚¯ã€ã‚’ä½œæˆã—ã¾ã™
+- ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã«ã¤ã„ã¦ã¯ä¾‹ã‚’ä»¥ä¸‹ã«ç¤ºã—ã¾ã™
+- Pull Request ã‚’ä½œã‚Šã¾ã™
+- ã‚‚ãã‚‚ãã—ãŸã‚Šå‚åŠ è€…ã¨æƒ…å ±äº¤æ›ã—ãŸã‚Šã—ã¦ãã ã•ã„
+- ã‚‚ã—ã‹ã™ã‚‹ã¨è‡ªå·±ç´¹ä»‹ã‚¿ã‚¤ãƒ ã‚’è¨­ã‘ã‚‹ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“
 
-¾åµ­¤Ë¤Ä¤¤¤Æ¤ÏÆ±ÍÍ¤Îµ­½Ò¤¬[¤³¤³](http://okinawadevops.github.io/)¤Ë¤â¤¢¤ê¤Ş¤¹¡£
+ä¸Šè¨˜ã«ã¤ã„ã¦ã¯åŒæ§˜ã®è¨˜è¿°ãŒ[ã“ã“](http://okinawadevops.github.io/)ã«ã‚‚ã‚ã‚Šã¾ã™ã€‚
 
-### Pull Request ¤Ë¤Ä¤¤¤Æ
+### Pull Request ã«ã¤ã„ã¦
 
-- ÆóÌ¾°Ê¾å¤Î¥ì¥Ó¥å¤ò¼õ¤±¤Æ¤¯¤À¤µ¤¤¡£
-- ²ÄÇ½¤Ç¤¢¤ì¤ĞÆó¿ÍÌÜ¤Î¥ì¥Ó¥å¥¢¤µ¤ó¤¬ merge ¤·¤Æ¤¢¤²¤Æ¤¯¤À¤µ¤¤¡£
+- äºŒåä»¥ä¸Šã®ãƒ¬ãƒ“ãƒ¥ã‚’å—ã‘ã¦ãã ã•ã„ã€‚
+- å¯èƒ½ã§ã‚ã‚Œã°äºŒäººç›®ã®ãƒ¬ãƒ“ãƒ¥ã‚¢ã•ã‚“ãŒ merge ã—ã¦ã‚ã’ã¦ãã ã•ã„ã€‚
 
-### ¥Õ¥©¡¼¥Ş¥Ã¥È
+### ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 
-°Ê²¼¤Ê·Á¤Ç¤¹¡£(_posts/2018-01-17-welcome-to-jekyll.markdown)
+ä»¥ä¸‹ãªå½¢ã§ã™ã€‚(_posts/2018-01-17-welcome-to-jekyll.markdown)
 
 ```
 ---
@@ -28,7 +28,7 @@ title:  "Welcome to Jekyll!"
 date:   2018-01-17 13:17:52 +0900
 categories: jekyll update
 ---
-YouãàÑÍl find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Youçª¶å†¤l find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
@@ -42,14 +42,14 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [JekyllãàÑÔ GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyllçª¶å†± GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
 ```
 
-Ì¤¤À `rake generate` ¤Ê¤É¤Ç¿÷·Á¤¬ºîÀ®¤µ¤ì¤ëÌõ¤Ç¤Ï¤¢¤ê¤Ş¤»¤ó¡£
+æœªã  `rake generate` ãªã©ã§é››å½¢ãŒä½œæˆã•ã‚Œã‚‹è¨³ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
 
 ## License
 
