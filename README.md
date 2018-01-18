@@ -51,6 +51,11 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 未だ `rake generate` などで雛形が作成される訳ではありません。
 
+## Requirement
+
+- ruby 2.4.2
+- bundler
+
 ## License
 
 [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)
