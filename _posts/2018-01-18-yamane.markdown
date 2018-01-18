@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "エントリの投入の方法について"
+date:   2018-01-18 21:08:52 +0900
+categories: mokumoku
+---
+
+### [yamanetoshi](http://weblog.metacircular-evaluator.org/)
+
+* [コンテンツ追加の方法を書きます](https://github.com/tabpot-mokumoku/tabpot-mokumoku.github.io/issues/6)
+
+#### とりあえず
+
+issue を作ります。今回の issue へのポインタは上にあります。
+
+#### issue 作成したら
+
+branch を作成します。名前は `日付-ユーザid` みたいなカンジが良さげです。
+
+```
+$ git checkout -b 20180118-yamane
+```
+
+そして `_posts/2018-01-18-yamane.markdown` というファイルを作成しています。このファイルです。現時点で `bundle exec rake` による新規作成はできません。`Rakefile` を云々するとできるようになると思います。
+
+#### もくもくメモ
+
+もくもくしつつ、作業ログをこのファイルに綴ります。たまに上書き保存して
+
+```
+$ bundle exec rake preview
+```
+
+してみると現状が確認できるはずです。また、文字コードは UTF-8 である必要があります。UTF-8 以外だと preview 時に何らかの不具合が発生するはずです。
+
+#### 完成または時間切れ
+
+で、commit を作成しましょう。もくもくが終わった後に自宅で、という時は自宅作業が終わってからでも良いと思います。
+
+```
+$ git status
+$ git add .
+$ git commit
+```
+
+できれば commit message はきちんと書きましょう。commit を作成したら branch を origin に push します。
+
+```
+git push origin 20180118-yamane
+```
+
+これでローカル作業は終わりです。
+
+#### pull request 作成から公開まで
+
+後は Github で pull request を作成すれば作業完了です。
+
+#### その後
+
+今は人が少ないのでアレですが、pull request に対して二名以上が `LGTM` してから merge するようにしましょう。
+
+master に merge が完了した時点で作成したエントリが確認できるようになっているはずです。
+
+#### コメント下さい
+
+まだ説明が足りていないはずなので不明点あれば issue あるいは pull request にコメント下さい。よろしくお願いします。
+
+また、エントリ投入を試してみることもやってみて頂ければと存じます。
