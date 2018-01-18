@@ -15,10 +15,10 @@ issue を作ります。今回の issue へのポインタは上にあります�
 
 #### issue 作成したら
 
-branch を作成します。名前は `日付-ユーザid` みたいなカンジが良さげです。
+branch を作成します。名前は `ユーザid-issue の ID` みたいなカンジが良さげです。
 
 ```
-$ git checkout -b 20180118-yamane
+$ git checkout -b yamanetoshi-6
 ```
 
 そして `_posts/2018-01-18-yamane.markdown` というファイルを作成しています。このファイルです。現時点で `bundle exec rake` による新規作成はできません。`Rakefile` を云々するとできるようになると思います。
@@ -46,7 +46,7 @@ $ git commit
 できれば commit message はきちんと書きましょう。commit を作成したら branch を origin に push します。
 
 ```
-git push origin 20180118-yamane
+git push origin yamanetoshi-6
 ```
 
 これでローカル作業は終わりです。
@@ -57,7 +57,9 @@ git push origin 20180118-yamane
 
 #### その後
 
-今は人が少ないのでアレですが、pull request に対して二名以上が `LGTM` してから merge するようにしましょう。
+今は人が少ないのでアレですが、pull request に対して二名以上が `LGTM` してから merge するようにしましょう。あ、LGTM メッセージは以下をアレすると (ry
+
+- [LGTM.in/g](https://www.lgtm.in/)
 
 master に merge が完了した時点で作成したエントリが確認できるようになっているはずです。
 
