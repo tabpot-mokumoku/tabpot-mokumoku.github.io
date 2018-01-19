@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "エントリを投入する環境の作り方について"
+date:   2018-01-19 09:58:52 +0900
+categories: mokumoku
+---
+
+### [yamanetoshi](http://weblog.metacircular-evaluator.org/)
+
+* [環境の作り方についてエントリ投入](https://github.com/tabpot-mokumoku/tabpot-mokumoku.github.io/issues/10)
+
+#### requirement
+
+- git
+- ruby 2.4.2
+- bundler
+
+Ruby については rbenv などで導入しておいた方が良いでしょう。Ruby の導入が終わった時点で以下のコマンドを実行しておく必要があります。
+
+```
+$ gem install bundler
+```
+
+#### 最初にすること
+
+github からリポジトリを clone します。
+
+```
+$ git clone https://github.com/tabpot-mokumoku/tabpot-mokumoku.github.io
+```
+
+同じ名前のディレクトリができているはずなので、カレントディレクトリを移動します。
+
+```
+$ cd tabpot-mokumoku.github.io
+```
+
+あとは以下のコマンドを実行すればプレビューなどができるようになっているはずです。
+
+```
+$ bundle install --path vendor/bundle
+```
+
+プレビューしてみましょう。
+
+```
+$ bundle exec rake preview
+```
+
+追補
+--------------
+
+OSX あるいは Linux を使っている場合には上記手順で問題ないと思われますが、Windows を使っている場合、なんらかの工夫 (仮想マシンの使用など) が必要になってくるでしょう。
+
+ただ、最近では Windows の中で Linux が使えたりするようなので、さほど苦労はないのかどうか。
