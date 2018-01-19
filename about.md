@@ -21,6 +21,10 @@ permalink: /about/
 
 + ひたすらもくもくなさっても無問題です
 
+エントリ投入の方法について書き起しています。
+
+- [エントリ投入の方法について](https://tapbot-mokumoku.github.io/mokumoku/2018/01/18/yamane.html)
+
 Issue について
 ------------------
 
