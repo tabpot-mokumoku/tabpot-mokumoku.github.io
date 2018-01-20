@@ -1,5 +1,17 @@
 ## README
 
+### Requirement
+
+- git
+- ruby 2.4.2
+- bundler
+
+### 環境の作り方について
+
+- [エントリを投入する環境の作り方について](https://tabpot-mokumoku.github.io/mokumoku/2018/01/19/yamane.html)
+
+### エントリ投入の方法
+
 基本的なすすめ方について以下に列挙します。
 
 - [リポジトリ](https://github.com/tabpot-mokumoku/tabpot-mokumoku.github.com/)の Issue でもくもくなネタを宣言します
@@ -10,7 +22,9 @@
 - もくもくしたり参加者と情報交換したりしてください
 - もしかすると自己紹介タイムを設けるかもしれません
 
-上記については同様の記述が[ここ](http://okinawadevops.github.io/)にもあります。
+エントリの投入方法については以下も参考にしてください。
+
+- [エントリの投入の方法について](https://tabpot-mokumoku.github.io/mokumoku/2018/01/18/yamane.html)
 
 ### Pull Request について
 
@@ -50,11 +64,6 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 ```
 
 未だ `rake generate` などで雛形が作成される訳ではありません。
-
-## Requirement
-
-- ruby 2.4.2
-- bundler
 
 ## License
 
