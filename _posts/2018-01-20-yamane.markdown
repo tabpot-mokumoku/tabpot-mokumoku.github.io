@@ -1,0 +1,141 @@
+---
+layout: post
+title:  "todo-mvp branch 確認"
+date:   2018-01-20 13:55:31 +0900
+categories: mokumoku
+---
+
+### [yamanetoshi](http://weblog.metacircular-evaluator.org/)
+
+* [todo-mvp のソースを読み始めてみます](https://github.com/tabpot-mokumoku/tabpot-mokumoku.github.io/issues/14)
+
+#### AndroidManifest から確認
+
+実は AS の環境は既に 3.0 になっていました。ので、build 自体は[リポジトリ](https://github.com/googlesamples/android-architecture)を clone して AS で読み込んだら一発で、でした。
+
+とりあえずエントリポイントとしては AndroidManifest.xml だろうということで確認着手します。
+
+- application タグの `android:supportsRtl` 属性については別途確認
+- activity はよっつ
+- MAIN, LAUNCHER な activity は tasks.TasksActivity
+- taskdetail.TaskDetailActivity および addedittask.AddEditTaskActivity という名前で役割が判断できる activity あり
+- というか、画面毎にパケジが異なる状態になっているのかどうか
+- statistics.StatisticsActivity については初めて見る属性あり
+- android:parentActivityName 属性、別途確認
+- tools:ignore 属性、別途確認
+
+どちらかというとアーキテクチャが、って部分の確認優先で、なのでこのあたりは流し気味ですすめます。
+
+#### 基底クラス
+
+なんとなく、ですが確認してみます。中身は
+
+- BasePresenter
+- BaseView
+
+の二点。両方とも interface 定義でした。それぞれ定義のみ引用しておきます。
+
+##### BasePresenter
+
+```
+public interface BasePresenter {
+
+    void start();
+
+}
+```
+
+##### BaseView
+
+```
+public interface BaseView<T> {
+
+    void setPresenter(T presenter);
+
+}
+```
+とりあえず、エントリポイントな activity がある tasks パケジから確認してみます。おそらく、なのですが data パケジが model になるのかどうか。ざくっと見てみましたがこちらが model でしょうね。詳細は別途、になるのかどうか。
+
+ # おそらくは、なのですが todo-mvp は不完全なはずなので
+ # 確認はざっくりだけの方が良さそう
+
+#### tasks パケジ
+
+TasksPresenter というクラスがあります。これがどのように使われてるか、がポイントなのかどうか。確認してみるに TasksActivity にて private な属性として定義されているのがわかります。
+
+つうかこんな式があるのですが
+
+```
+        // Create the presenter
+        mTasksPresenter = new TasksPresenter(
+                Injection.provideTasksRepository(getApplicationContext()), tasksFragment);
+```
+
+Injection て何、と思ったら以下なナニが。
+
+```
+import com.example.android.architecture.blueprints.todoapp.Injection;
+```
+
+何じゃこりゃ。定義元、見てみたら Injection.java というファイルが開いたのですが、どこで定義されてるのか、と思ったら mock 配下でした。
+
+これ、mvp なインスタンスがどのように使われてるか、を確認した方が良さそうですね。
+
+#### Presenter
+
+Presenter なインスタンスを持っているのは
+
+- Activity
+- Fragment 
+
+な模様。とりあえずインスタンスを生成しているのは Activity です。onCreate メソドにて TasksActivity だと TasksFragment インスタンスを生成した直後で上の命令を実行しています。
+
+Injection.provideTasksRepository という手続きについては別途確認の方向。ちなみに TasksPresenter のコンストラクタの定義が以下で
+
+```
+    public TasksPresenter(@NonNull TasksRepository tasksRepository, @NonNull TasksContract.View tasksView) {
+        mTasksRepository = checkNotNull(tasksRepository, "tasksRepository cannot be null");
+        mTasksView = checkNotNull(tasksView, "tasksView cannot be null!");
+
+        mTasksView.setPresenter(this);
+    }
+```
+
+TaskContract.View は TaskFragment が実装している interface 型です。そうか、Presenter (Controller) は Model と View のインスタンスを持っとく必要ありますね。
+
+と、いうことは
+
+- TasksRepository が Model クラス
+- TasksContract.View が View クラス
+- TasksPresenter が Presenter クラス
+
+ということになるのか。とりあえず Presenter から確認、ということで TaskContract.Presenter の定義が以下。
+
+```
+    interface Presenter extends BasePresenter {
+
+        void result(int requestCode, int resultCode);
+
+        void loadTasks(boolean forceUpdate);
+
+        void addNewTask();
+
+        void openTaskDetails(@NonNull Task requestedTask);
+
+        void completeTask(@NonNull Task completedTask);
+
+        void activateTask(@NonNull Task activeTask);
+
+        void clearCompletedTasks();
+
+        void setFiltering(TasksFilterType requestType);
+
+        TasksFilterType getFiltering();
+    }
+```
+
+ってこれ、tasks パケジの中で、なのか。こういった丁寧さって必要ですよね (何
+
+#### 時間切れ
+
+微妙なところで、なのですがご容赦頂ければと。もしかすると明日対応して追記するかもしれません。
