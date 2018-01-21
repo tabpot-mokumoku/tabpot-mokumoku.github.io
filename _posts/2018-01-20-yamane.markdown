@@ -139,3 +139,38 @@ TaskContract.View は TaskFragment が実装している interface 型です。�
 #### 時間切れ
 
 微妙なところで、なのですがご容赦頂ければと。もしかすると明日対応して追記するかもしれません。
+
+#### 追記
+
+スデに酒が入っているのですが続きをナニしてみます。とりあえず TaskContract.Presenter なインスタンスメソドの呼び出し元は
+
+- TasksActivity
+- TasksFragment
+
+になっていますね。とりあえず TasksActivity から確認。
+
+- onCreate にてインスタンス生成
+- 画面回転などで onCreate 呼び出しであれば setFiltering メソド呼び出し
+
+やはり基本的には View から呼び出しなのか。TasksFragment では以下。
+
+- onResume にて start メソド呼び出し
+- setPresenter というメソドにて属性に引数設定
+
+む、setPresenter てどこで呼び出してるのかと思ったら TasksPresenter のコンストラクタでした。成程。TasksFragment の確認を引き続き。
+
+- onActivityResult にて result メソド呼び出し
+- FloatingActionButton の onClick にて addNewTask メソド呼び出し
+- ScrollChildSwipeRefreshLayout の setOnRefreshListener に渡す lambda オブジェクトの中から loadTasks メソド呼び出し
+- onOptionsItemSelected の menu_clear 選択時、clearCompletedTasks メソド呼び出し
+- onOptionsItemSelected の menu_refresh 選択時、loadTasks メソド呼び出し
+- showFilteringPopupMenu メソドで設定される popup メニュー 選択時、setFiltering メソド呼び出して loadTasks 呼び出し
+- ListView 選択時の onTaskClick から openTaskDetails メソド呼び出し
+- ListView 選択時の onCompleteTaskClick から completeTask メソド呼び出し
+- ListView 選択時の onActivateTaskClick から activateTask メソド呼び出し
+
+基本的にユーザからのイベント契機で Presenter なメソドが呼び出されているはず。そして上記に列挙されているメソドについては TasksContract.Presenter にて interface 定義されていますね。
+
+#### 次
+
+上記の Presenter なメソド呼び出し契機毎に掘削を試みてみようと思います。
