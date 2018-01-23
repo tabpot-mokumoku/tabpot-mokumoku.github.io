@@ -67,4 +67,4 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 ## License
 
-[GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)
+[GPLv3](http://www.gnu.org/licenses/gpl-3.0.html)
